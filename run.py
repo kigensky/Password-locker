@@ -48,3 +48,9 @@ def save_credentials(credentials):
     Function to save Credentials to the credentials list
     """
     credentials. save_details()
+    
+def display_accounts_details():
+    """
+    Function that returns all the saved credential.
+    """
+    return Credentials.display_credentials()    
