@@ -1,13 +1,6 @@
 from user import User, Credentials 
 
-def function():
-    print("               ____                         _                                          ")
-	print("              |  _ \                       | |                     _   __              ")
-	print("              | |_) )  ____  ___   ___     | |       ______  ____ | | / /  ____  _ _   ")
-	print("              |  __/  / _  |/ __  / __     | |      |  __  ||  __|| |/ /  / __ \| '_|  ")
-	print("              | |    / (_| |\__ \ \__ \    | |____  | |__| || |__ | |\ \ |  ___/| |    ")
-	print("              |_|    \_____| ___/  ___/    |_______||______||____||_| \_\ \____ |_|    ")
-function()
+
 
 def create_new_user(username,password):
     '''
@@ -48,9 +41,15 @@ def save_credentials(credentials):
     Function to save Credentials to the credentials list
     """
     credentials. save_details()
+
+def display_accounts_details():
+    """
+    Function that returns all the saved credential.
+    """
+    return Credentials.display_credentials()    
     
- def delete_credential(credentials):
-        """
+def delete_credential(credentials):
+    """
     Function to delete a Credentials from credentials list
 
     """
@@ -84,7 +83,7 @@ def copy_password(account):
     return Credentials.copy_password(account)
 
 def passlocker():
-    print("Hello Welcome to your Accounts Password locker...\n Please enter one of the following to proceed.\n CA ---  Create New Account  \n LI ---  Have An Account  \n")
+    print("Hello Welcome to your Accounts Password Store...\n Please enter one of the following to proceed.\n CA ---  Create New Account  \n LI ---  Have An Account  \n")
     short_code=input("").lower().strip()
     if short_code == "ca":
         print("Sign Up")
@@ -141,9 +140,8 @@ def passlocker():
             print(f"Account Credential for: {account} - UserName: {userName} - Password:{password} created succesfully")
             print('\n')
         elif short_code == "dc":
-            if display_accounts_details():
+            if  display_accounts_details():
                 print("Here's your list of acoounts: ")
-                 
                 print('*' * 30)
                 print('_'* 30)
                 for account in display_accounts_details():
@@ -188,6 +186,6 @@ def passlocker():
             print("Wrong entry... Check your entry again and let it match those in the menu")
     else:
         print("Please enter a valid input to continue")
-
+        
 if __name__ == '__main__':
     passlocker()
