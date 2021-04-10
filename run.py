@@ -49,8 +49,4 @@ def save_credentials(credentials):
     """
     credentials. save_details()
     
-def display_accounts_details():
-    """
-    Function that returns all the saved credential.
-    """
-    return Credentials.display_credentials()    
+    
