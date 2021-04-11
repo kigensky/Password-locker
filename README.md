@@ -21,7 +21,7 @@ The user would like to.... :
 ## Installation / Setup instruction
 
 #### The application requires the following installations to operate 
-* python2.7
+* python3.6
 * pyperclip
 * pip
 
@@ -38,10 +38,10 @@ The user would like to.... :
 ### Running the Application
 * To run the application, open the cloned file in terminal and run the following commands:
 
-        $ chmod +x run.py
-        $ ./run.py
+        $ python3 run.py
+
 * To run test for the application
-        $ python user_test.py
+        $ python3 -m unittest  user_test.py
 
 ## Behaviour Driven Development
 | Behaviour | Input | Output |
@@ -53,11 +53,11 @@ The user would like to.... :
 |Display all stored credentials | Enter ```DC```|A list of all credentials that has been stored or ```You don't have any credentials saved yet``` |
 |Find a stored credential based on account name|Enter ```FC```| Enter the Account Name you want to search for and returns the account details|
 |Delete an existing credential that you don't want anymore|Enter ```D```|Enter the account name of the Credentials you want to delete and returns true if the account has been deleted and false if the account doesn't exixt|
-|Exit the application| Enter ```D```| The application exits|
+|Exit the application| Enter ```EX```| The application exits|
 
 ## Technologies Used
 
-* python2.7.18
+* python3.6
 
 ## Known Bugs
 * There are no known bugs currently but pull requests are allowed incase you spot a bug
