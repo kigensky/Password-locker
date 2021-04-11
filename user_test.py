@@ -10,14 +10,14 @@ class TestClass(unittest.TestCase):
         """
         Method that runs before each individual test methods run.
         """
-        self.new_user = User('OwitiCharles','XyZ3thf1')
+        self.new_user = User('ethan','2021')
 
     def test_init(self):
         """
         test case to chek if the object has been initialized correctly
         """
-        self.assertEqual(self.new_user.username,'OwitiCharles')
-        self.assertEqual(self.new_user.password,'XyZ3thf1')
+        self.assertEqual(self.new_user.username,'ethan')
+        self.assertEqual(self.new_user.password,'2021')
 
     def test_save_user(self):
         """
@@ -37,14 +37,14 @@ class TestCredentials(unittest.TestCase):
         Method that runs before each individual credentials test methods run.
 
         """
-        self.new_credential = Credentials('Gmail','Owiti_Charles','yx5Gij43')
+        self.new_credential = Credentials('facebook','ethan','1234')
     def test_init(self):
         """
         Test case to check if a new Credentials instance has been initialized correctly
         """
-        self.assertEqual(self.new_credential.account,'Gmail')
-        self.assertEqual(self.new_credential.userName,'Owiti_Charles')
-        self.assertEqual(self.new_credential.password,'yx5Gij43')
+        self.assertEqual(self.new_credential.account,'facebook')
+        self.assertEqual(self.new_credential.userName,'ethan')
+        self.assertEqual(self.new_credential.password,'1234')
 
     def save_credential_test(self):
         """
@@ -65,7 +65,7 @@ class TestCredentials(unittest.TestCase):
         test to check if we can save multiple credentials objects to our credentials list
         '''
         self.new_credential.save_details()
-        test_credential = Credentials("Twitter","mikeycharles","Mfh45hfk") 
+        test_credential = Credentials("Twitter","ethan","1234") 
         test_credential.save_details()
         self.assertEqual(len(Credentials.credentials_list),2)
 
@@ -74,7 +74,7 @@ class TestCredentials(unittest.TestCase):
         test method to test if we can remove an account credentials from our credentials_list
         """
         self.new_credential.save_details()
-        test_credential = Credentials("Twitter","mikeycharles","Mfh45hfk")
+        test_credential = Credentials("Twitter","ethan","1234")
         test_credential.save_details()
 
         self.new_credential.delete_credentials()
@@ -85,7 +85,7 @@ class TestCredentials(unittest.TestCase):
         test to check if we can find a credential entry by account name and display the details of the credential
         """
         self.new_credential.save_details()
-        test_credential = Credentials("Twitter","mikeycharles","Mfh45hfk") 
+        test_credential = Credentials("Twitter","ethan","1234") 
         test_credential.save_details()
 
         the_credential = Credentials.find_credential("Twitter")
@@ -97,7 +97,7 @@ class TestCredentials(unittest.TestCase):
         test to check if we can return a true or false based on whether we find or can't find the credential.
         """
         self.new_credential.save_details()
-        the_credential = Credentials("Twitter", "mikeycharles", "Mfh45hfk")  
+        the_credential = Credentials("Twitter", "ethan", "1234")  
         the_credential.save_details()
         credential_is_found = Credentials.if_credential_exist("Twitter")
         self.assertTrue(credential_is_found)
